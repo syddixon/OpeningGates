@@ -10,6 +10,8 @@ public class GateOpen : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        FindAndSub();
+
     }
 
     // Update is called once per frame
@@ -26,4 +28,20 @@ public class GateOpen : MonoBehaviour
     {
         animator.Play("CloseGate");
     }
+
+    public void OnPowerUp()
+    {
+        animator.Play("OpenGate");
+        Debug.Log("Gate powered up!");
+    }
+
+    public void FindAndSub()
+    {
+        GameObject obj = GameObject.FindGameObjectWithTag("Coin");
+        if (obj != null)
+        {
+            obj.GetComponent<Coin>().PowerUp.AddListener(OnPowerUp);
+        }
+    }
+
 }
