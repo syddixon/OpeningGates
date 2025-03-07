@@ -6,7 +6,8 @@ public class PlayerControl : MonoBehaviour
 {
     [SerializeField] float Speed = 1;
     [SerializeField] GameObject Coin;
-    private bool coinInstantiated = false; 
+    [SerializeField] GameObject GateWallParent;
+    bool coinInstantiated = false; 
    
     // Start is called before the first frame update
     void Start()
@@ -23,22 +24,21 @@ public class PlayerControl : MonoBehaviour
 
         if (Input.GetKeyDown("space") && !coinInstantiated)
         {
-            Debug.Log("space key was pressed");
+           
             InstantiateCoin();
         }
     }
 
-    void InstantiateCoin()
+    public void InstantiateCoin()
     {
         GameObject coin = Instantiate(Coin);
         coinInstantiated = true;
 
-       // GameObject[] gateObjects = GameObject.FindGameObjectWithTag("Gate");
-       // foreach (GameObject gateObject in gateObjects)
+        //GameObject obj = GameObject.FindGameObjectWithTag("Gate");
+        //if (obj != null)
         //{
-         //   GateOpen.FindAndSub();
-       // }
-
+        //    obj.GetComponent<GateWallParent>().PowerUp.AddListener(OnPowerUp);
+        //}
 
     }
 }

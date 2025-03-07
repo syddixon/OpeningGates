@@ -568,6 +568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 5
   Coin: {fileID: 2564002719240495872, guid: d6dd886ed2dfa3040a60b6b2f409d034, type: 3}
+  GateWallParent: {fileID: 1877116697840827662, guid: df6f966ce0461f74986103406c97a01b, type: 3}
 --- !u!136 &630350874
 CapsuleCollider:
   m_ObjectHideFlags: 0

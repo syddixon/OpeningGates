@@ -10,14 +10,14 @@ public class GateOpen : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        FindAndSub();
+        
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        FindAndSub(); 
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,7 +32,6 @@ public class GateOpen : MonoBehaviour
     public void OnPowerUp()
     {
         animator.Play("OpenGate");
-        Debug.Log("Gate powered up!");
     }
 
     public void FindAndSub()
